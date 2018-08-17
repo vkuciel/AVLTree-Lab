@@ -75,7 +75,7 @@ private:
 	// returns the depth from the current subtree (node is subroot)
 	// must use recursion.
 	int getDepthAux(const T& value, AVLNode* node) const {
-		// CODE HERE
+
 		if (node == nullptr) {
 			return -1;
 		}
@@ -106,7 +106,7 @@ private:
 	// the node parameter is the root of the current subtree.
 	// Must use recursion.
 	AVLNode* findNode(const T& value, AVLNode* node) const {
-		// CODE HERE
+
 		if (node == nullptr) {
 			return nullptr;
 		}
@@ -155,7 +155,7 @@ private:
 	}
 	// should print the tree in a preorder traversal
 	void printPreorder(AVLNode* node) const {
-		// CODE HERE
+
 
 		if (node != nullptr) {					// Preorder: root, L, R
 			printNode(node);
@@ -167,7 +167,7 @@ private:
 
 	// should print the tree in an inorder traversal
 	void printInorder(AVLNode* node) const {
-		// CODE HERE
+
 		if (node != nullptr) {					// Inorder: L, root, R
 			printInorder(node->leftChild);
 			printNode(node);
@@ -177,7 +177,7 @@ private:
 
 	// should print the tree in a postorder traversal
 	void printPostorder(AVLNode* node) const {
-		// CODE HERE
+
 		if (node != nullptr) {					// Posrorder: L, R, root
 			printPostorder(node->leftChild);
 			printPostorder(node->rightChild);
@@ -192,7 +192,7 @@ private:
 	// Else, create memory for it and place pointers appropriately.
 	// Must use recursion.
 	void insert(T& value, AVLNode* & node){
-		// CODE HERE
+
 		if (node != nullptr) {
 			node = new AVLNode(value);
 		}
@@ -227,7 +227,7 @@ private:
 	// alpha in our class discussions. Should call onf of the rotate functions.
 	// Don't forget to set the height at the end!
 	void balance(AVLNode* & node){
-		// CODE HERE
+
 
 		if (node != nullptr) {
 			return;
@@ -259,7 +259,7 @@ private:
 	// Rotate binary tree node with left child, i.e. a single rotation
 	// for case 1. Update the heights, and set new root.
 	void rotateLeft(AVLNode*& node){
-		// CODE HERE
+
 
 		AVLNode *rNode = node->leftChild;
 		node->leftChild = rNode->rightChild;
@@ -272,7 +272,7 @@ private:
 	// Rotate binary tree node with right child, i.e. a single rotation
 	// for case 4. Update the heights, and set new root.
 	void rotateRight(AVLNode*& node){
-		// CODE HERE
+
 
 		AVLNode *rNode = node->rightChild;
 		node->rightChild = rNode->leftChild;
@@ -286,7 +286,7 @@ private:
 	// child, then subroot with its new left child (was grandchild previously).
 	// I.e. rotation case 2. Update the heights, and set new root.
 	void rotateDoubleLeft(AVLNode*& node){
-		// CODE HERE
+
 
 		rotateRight(node->leftChild);
 		rotateLeft(node);
@@ -297,7 +297,7 @@ private:
 	// child, then subroot with its new left child (was grandchild previously).
 	// I.e. rotation case 2. Update the heights, and set new root.
 	void rotateDoubleRight(AVLNode*& node){
-		// CODE HERE
+
 
 		rotateLeft(node->rightChild);
 		rotateRight(node);
@@ -308,7 +308,7 @@ private:
 	// has duplicates, decrement the duplicates. Else deallocate the memory and
 	// recursively call remove to fix the tree, as discussed in class.
 	void remove(T& value, AVLNode*& node){
-		// CODE HERE
+
 		if (node == nullptr) {
 			return;
 		}
@@ -396,7 +396,7 @@ private:
 
 	// private function to recursively empty
 	void empty(AVLNode* node){
-		// CODE HERE
+
 
 		if (node != nullptr) {
 			empty(node->leftChild);
@@ -464,7 +464,7 @@ public:
 	// if the value does not exist, return -128 (the lowest value for
 	// a 1-byte char). If it does exist, return the balance factor.
 	char getBalanceFactor(T& value) const {
-		// CODE HERE
+
 		if (value == NULL) {
 			return -128;
 		}
@@ -496,7 +496,7 @@ public:
 
 	// should print the tree in a level-order traversal (NOT driver function)
 	void printLevelOrder(){
-		// CODE HERE
+
 		if (root == NULL) {
 			return;
 		}
@@ -537,7 +537,7 @@ public:
 	// driver function for emptying the tree, since there is no public access
 	// to root of tree (as many other functions do in this file)
 	void empty(){
-		// CODE HERE
+
 		empty(root);
 	}
 
